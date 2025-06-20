@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Textbooks | ISCian Info</title>
+  <link rel="stylesheet" href="textbooks.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap" rel="stylesheet">
+  <link href="textbook.css" rel="stylesheet" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const anchors = document.querySelectorAll("a");
+  
+      anchors.forEach(anchor => {
+        const isExternal = anchor.hostname && anchor.hostname !== location.hostname;
+  
+        if (isExternal) {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.open(anchor.href, '_system');
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<header>
+  <div class="logo-text">
+    <img src="png logo isc.png" alt="Logo" class="logo" />
+    <span>Your ISC | Textbooks </span>
+  </div>
+</header>
+
+  
+  <main>
+    <section class="intro">
+      <p>📚 Get access to Govt. page containing all your textbooks in just one click ⬇️</p>
+    </section>
+
+    <section class="version-box">
+      <h2>Primary level Textbooks-2025</h2>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/b9ec5307-47a0-4b72-8331-d28520af9d2f')">☀️ Class 1</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/c07acd88-4fba-40a7-9950-f72228e48761')">🎈 Class 2</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/5935deb5-62ed-45b9-8c80-3a945d996281')">🪁 Class 3</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/0de86770-c34a-4059-88ec-072ec06fa808')">🧮 Class 4</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/959b2f28-a044-4e58-a40d-c04b9fa8f0f2')">🎖️ Class 5</button>
+    </section>
+    
+    <section class="version-box">
+      <h2>Secondary level Textbooks-2025</h2>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/f84b0f23-ccb7-41a8-9c29-983afd3d092e')">☄️ Class 6</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/bc758f07-9e6e-4e7c-93ee-d3aef1c15229')">🌆 Class 7</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/00751775-3953-4c0d-9bd4-c4ff68760176')">🎓 Class 8</button>
+      <button onclick="openInBrowser('https://nctb.portal.gov.bd/site/page/3a96de78-a64d-49e0-8a24-df9a1d305d87')">🧬💵🎨 Class 9-10 (All Groups)</button>
+    </section>
+    
+    <script>
+      function openInBrowser(url) {
+        // Redirecting this way often forces external browser in WebView wrappers
+        window.location.href = url;
+      }
+    </script>
+    
+    
+
+  <footer>
+    <p>Developed by, Kazi Nazid Newaj © 2025</p>
+  </footer>
+</body>
+</html>

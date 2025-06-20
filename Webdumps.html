@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Dump</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #76a85d, #4c6939);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 90px 20px 70px;
+      min-height: 100vh;
+    }
+
+        /* HEADER STYLE */
+    header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f441e;
+    color: white;
+    padding: 15px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .logo-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+    .logo {
+    height: 60px;
+    width: auto;
+    }
+
+    /* FOOTER STYLE */
+    footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1f441e;
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 14px;
+    z-index: 1000;
+    }
+
+    .section {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      width: 95%;
+      max-width: 900px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .tool-button {
+      background-color: #fff;
+      color: #1e4c1c;
+      font-weight: bold;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .tool-button:hover {
+      background-color: #d1e7cb;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      .tool-button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+          <img src="png logo isc.png" alt="Logo" class="logo" />
+          <span>Your ISC | Web Dumps</span>
+        </div>
+    </header>
+
+    <div class="section">
+      <h2>Reasoning and Research</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+        <a class="tool-button" href="https://gemini.google.com/" target="_blank">Gemini</a>
+        <a class="tool-button" href="https://chat.deepseek.com/" target="_blank">Deepseek</a>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Composition Writing</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://quillbot.com/" target="_blank">Quillbot</a>
+        <a class="tool-button" href="https://smodin.io/app" target="_blank">Smodin</a>
+        <a class="tool-button" href="https://jenni.ai/" target="_blank">Jenni</a>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Resources</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://wikipedia.org/" target="_blank">Wikipedia</a>
+        <a class="tool-button" href="https://gutenberg.org/" target="_blank">Project Gutenberg</a>
+        <a class="tool-button" href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Coding and Programming</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://www.useblackbox.io/" target="_blank">Blackbox</a>
+        <a class="tool-button" href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+        <a class="tool-button" href="https://claude.ai/" target="_blank">Claude</a>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>E-books</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://archive.org/" target="_blank">Internet Archive</a>
+        <a class="tool-button" href="https://libgen.is/" target="_blank">Library Genesis</a>
+        <a class="tool-button" href="https://bdebooks.com/" target="_blank">BD eBooks</a>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Math Solvers</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://www.cymath.com/" target="_blank">Cymath</a>
+        <a class="tool-button" href="https://photomath.com/" target="_blank">Photomath</a>
+        <a class="tool-button" href="https://www.geogebra.org/" target="_blank">GeoGebra</a>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Teacher's Section</h2>
+      <div class="tool-list">
+        <a class="tool-button" href="https://zoom.us/" target="_blank" rel="noopener noreferrer">Zoom</a>
+        <a class="tool-button" href="https://www.notion.com/" target="_blank" rel="noopener noreferrer">Notion</a>
+        <a class="tool-button" href="https://www.teachers.gov.bd/" target="_blank" rel="noopener noreferrer">Teachers' window</a>
+      </div>
+    </div>
+    
+
+  <footer>DEVELOPED BY, KAZI NAZID NEWAJ © 2025</footer>
+</body>
+</html>

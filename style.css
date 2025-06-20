@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, #77b255, #4b6f3a);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1f441e;
+  padding: 15px 0;
+  font-size: 22px;
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+.logo {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1f441e;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Centering Container */
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* Header space */
+  padding-bottom: 50px; /* Footer space */
+}
+
+/* Login Box */
+.login-box {
+  background-color: #b5d6a7;
+  color: black;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.center-logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.info-text {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #88a276;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  padding: 10px 30px;
+  background-color: #4b6f3a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.remember {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.remember-btn {
+  padding: 5px 15px;
+  margin: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightblue;
+  font-weight: bold;
+}
+
+.remember-btn.no {
+  background-color: salmon;
+}
+
+.error-msg {
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .login-box {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  header, footer {
+    font-size: 18px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}

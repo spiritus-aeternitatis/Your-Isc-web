@@ -1,0 +1,173 @@
+/* Font for Bangla */
+@font-face {
+  font-family: 'SutonnyMJ';
+  src: url('SutonnyMJ.woff2') format('woff2'),
+       url('SutonnyMJ.woff') format('woff');
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Signika', sans-serif;
+  background: linear-gradient(to right, #76a85d, #4c6939);
+  color: #fff;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+main {
+  padding: 90px 20px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1f441e;
+  padding: 15px 0;
+  font-size: 22px;
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+.logo {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1f441e;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Section/Intro Box */
+.intro {
+  background-color: #c2e59c;
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #1e4c1c;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 500px;
+  animation: popIn 1.2s ease-in-out;
+}
+
+/* Version Box (Like buttons group section) */
+.version-box {
+  background-color: #f0f5e1;
+  color: #222;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.version-box h2 {
+  margin-bottom: 20px;
+  color: #144c1e;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.version-box.bangla h2 {
+  font-family: 'SutonnyMJ', serif;
+}
+
+.version-box button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #4c6939;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.version-box button:hover {
+  background-color: #3e572f;
+  transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+  }
+
+  .version-box h2 {
+    font-size: 1.1rem;
+  }
+
+  .version-box button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  header img {
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .intro {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .version-box h2 {
+    font-size: 1rem;
+  }
+
+  .version-box button {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}

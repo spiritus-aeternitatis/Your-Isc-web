@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework Corner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4CAF50, #2E8B57);
+      color: white;
+      min-height: 100vh;
+      padding-top: 60px; /* space for fixed header */
+      padding-bottom: 70px; /* space for fixed footer */
+      display: flex;
+      flex-direction: column;
+    }
+
+        /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1f441e;
+      padding: 15px 0;
+      font-size: 22px;
+      font-weight: bold;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .logo {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #1f441e;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 15px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .homework-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .subject-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
+    }
+
+    .subject-card h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    textarea {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      flex-grow: 1;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      background: #fff;
+      color: #000;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 80px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #save-button {
+      background: #003d2f;
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 25px;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 20px auto 0;
+      transition: 0.3s ease;
+      display: block;
+    }
+
+    #save-button:hover {
+      background-color: #006644;
+      transform: scale(1.05);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 20px;
+      }
+      header {
+        font-size: 17px;
+      }
+      .subject-card h3 {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 10px 5px;
+      }
+      .homework-wrapper {
+        grid-template-columns: 1fr;
+      }
+      header {
+        font-size: 16px;
+        padding: 8px 5px;
+      }
+      footer {
+        font-size: 12px;
+        padding: 6px 5px;
+      }
+      #save-button {
+        font-size: 13px;
+        padding: 10px 18px;
+      }
+      textarea {
+        min-height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-text">
+      <img src="png logo isc.png" alt="Logo" class="logo" />
+      <span>Your ISC | Homework corner</span>
+    </div>
+  </header>
+
+  <main>
+    <h2>📚 Today's Homework</h2>
+    <div class="homework-wrapper" id="homeworkWrapper">
+      <!-- Homework Cards will load here -->
+    </div>
+    <button id="save-button">💾 Save Homework</button>
+  </main>
+
+  <footer>
+    DEVELOPED BY, KAZI NAZID NEWAJ © 2025
+  </footer>
+
+  <script>
+    const subjects = [
+      "বাংলা ১ম পত্র",
+      "বাংলা ২য় পত্র",
+      "English 1st paper",
+      "English 2nd paper",
+      "Math (sci., com. and arts)",
+      "Science (phy, chem, bio, geo, etc)",
+      "Religion",
+      "B.G.S.",
+      "I.C.T.",
+      "Others (eg. Agriculture)"
+    ];
+
+    const wrapper = document.getElementById('homeworkWrapper');
+
+    subjects.forEach(subject => {
+      const id = subject.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
+      const card = document.createElement('div');
+      card.className = 'subject-card';
+      card.innerHTML = `
+        <h3>${subject}</h3>
+        <textarea id="${id}-homework" placeholder="Write your homework..."></textarea>
+      `;
+      wrapper.appendChild(card);
+    });
+
+    function saveHomework() {
+      let homeworkData = {};
+      document.querySelectorAll("textarea").forEach(textarea => {
+        homeworkData[textarea.id] = textarea.value;
+      });
+      localStorage.setItem("homeworkNotes", JSON.stringify(homeworkData));
+      alert("✅ Homework saved successfully!");
+    }
+
+    function loadHomework() {
+      let savedData = JSON.parse(localStorage.getItem("homeworkNotes"));
+      if (savedData) {
+        Object.keys(savedData).forEach(id => {
+          if (document.getElementById(id)) {
+            document.getElementById(id).value = savedData[id];
+          }
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadHomework);
+    document.getElementById('save-button').addEventListener('click', saveHomework);
+  </script>
+
+</body>
+</html>
