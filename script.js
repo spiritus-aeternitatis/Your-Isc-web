@@ -8,7 +8,7 @@ const users = {
   '@driza': { password: 'iscb30', display: 'Adriza'},
   'fest-@cc': { password: 'IAIT.innovatia', display: 'I.A.I.T.'},
   '$iddique': { password: 'ideal25', display: "Hon'ble Headsir"},
-  'user-isc': {passeord: 'fr.iscian', display: 'ISCian' }
+  'user.isc': {passeord: 'fr-iscian', display: 'ISCian' }
 };
 
 window.onload = () => {
